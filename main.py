@@ -1,7 +1,7 @@
 import asyncio
 
 from aiogram import Bot, types, Dispatcher
-from direc.config import load_config
+from direc.config import load_config, set_main_menu
 import logging
 from direc.handlers import router
 
@@ -19,6 +19,7 @@ async def main():
 
     dp.include_routers(router)
 
+    await set_main_menu(bot)
     await dp.start_polling(bot)
 
 if __name__ == '__main__':

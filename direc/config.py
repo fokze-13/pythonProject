@@ -1,5 +1,7 @@
 from dataclasses import dataclass
 from typing import Any
+from aiogram import Bot
+from aiogram.types import BotCommand
 
 from environs import Env
 
@@ -9,6 +11,7 @@ class Config:
     basic_format: str
     message_answers: dict[str, Any]
     log_file: str
+    commands: dict[str, str]
 
 
 
@@ -35,4 +38,12 @@ def load_config() -> Config:
                          "help": "Ты выбираешь свой вариант и нажимаешь на клавиатуру, после чего я тоже делаю выбор, и потом мы узнаем выиграл ты или нет. Давай приступим к игре!"
                          },
         log_file="log.txt",
+        commands={"/start": "Старт бота",
+                  "/help": "Помощь"}
     )
+
+config = load_config()
+
+async def set_main_menu(bot: Bot):
+    main_menu_commands = [BotCommand(command = i, description=j) for i, j in config.commands.items()]
+    await bot.set_my_commands(main_menu_commands)
