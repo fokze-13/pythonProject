@@ -26,6 +26,7 @@ def load_config() -> Config:
                          "start_keyboard_buttons": {"agree": "Давай!",
                                                     "disagree": "Не хочу",
                                                     "help": "/help"},
+                         "inline_keyboard_button": "Telegram",
                          "agree_message": "Отлично! Делай свой выбор!",
                          "agree_message_keyboard": {"rock": "Камень",
                                                     "paper": "Бумага",

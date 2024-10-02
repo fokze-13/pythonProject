@@ -11,6 +11,7 @@ router = Router()
 @router.message(Command('start'))
 async def start(message: types.Message):
     await message.answer(config.message_answers["start"], reply_markup=start_keyboard)
+    await message.answer("Связаться со мной", reply_markup=username_inline_keyboard)
 
 
 @router.message(F.text == config.message_answers["start_keyboard_buttons"]["agree"])
