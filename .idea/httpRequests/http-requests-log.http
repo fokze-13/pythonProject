@@ -1,0 +1,11 @@
+GET http://google.com
+User-Agent: IntelliJ HTTP Client/PyCharm 2024.2.3
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+cookie:
+content-length: 0
+
+<> 2024-09-28T224542.200.html
+
+###
+
